@@ -1,6 +1,26 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  const seen = new Set();
+  for (const num of array) {
+   const diff = target - num;
+
+     if (seen.has(diff)) {
+        return true;
+    }
+
+    seen.add(num);
 }
+
+
+return false;
+}
+
+// Test the function
+const array = [3, 8, 12, 4, 11, 7];
+const target = 10;
+console.log(hasTargetSum(array, target));
+
+
 
 /* 
   Write the Big O time complexity of your function here
@@ -9,11 +29,15 @@ function hasTargetSum(array, target) {
 /* 
   Add your pseudocode here
 */
+//1. Start
+// 2. Input a number and store it in a variable, let's call it 'hasTargetSum'.
+// 3. If 'hasTargetSum' array  is  [3, 8, 12, 4, 11, 7] 
+//     a. return output as '10' 
+// 4. Else:
+//     return as 'False'
+// 5. End
 
-/*
-  Add written explanation of your solution here
-*/
-
+//
 // You can run `node index.js` to view these console logs
 if (require.main === module) {
   // add your own custom tests in here
